@@ -1,4 +1,4 @@
-name: utn-test-Manual-exec
+name: utn-test-manual-exec
 on:
     workflow_dispatch:
 jobs:
@@ -13,8 +13,8 @@ jobs:
         uses: cypress-io/github-action@v6.5.0
         with:
           spec: |
-              cypress/e2e/utn1/*
-              cypress/e2e/utn2/*              
+              cypress/e2e/utn/*
+              cypress/e2e/utn1/*              
           browser: chrome
       - name: upload
         uses: actions/upload-artifact@v4
