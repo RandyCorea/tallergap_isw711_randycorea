@@ -1,4 +1,4 @@
-name: utn-test-manual-exec
+name: utn-test-Manual-exec
 on:
     workflow_dispatch:
 jobs:
@@ -12,11 +12,13 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6.5.0
         with:
-          #spec: cypress/e2e/*
+          spec: |
+              cypress/e2e/utn1/*
+              cypress/e2e/utn2/*              
           browser: chrome
       - name: upload
         uses: actions/upload-artifact@v4
         if: always()
         with:
             name: cypress-videos
-             path: cypress/videos
+            path: cypress/videos
